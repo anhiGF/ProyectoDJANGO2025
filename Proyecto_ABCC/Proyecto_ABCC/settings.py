@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-v(pjr%mq05@hb3pt%x=emo-%l85g-^a%-h3-#68o#_jyy@i6_f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ["*"]  # Activa todos los hosts
 
 
 # Application definition
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -76,19 +78,17 @@ WSGI_APPLICATION = 'Proyecto_ABCC.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
-   # 'default': {
-    #    'ENGINE': 'django.db.backends.sqlite3',
-     #   'NAME': BASE_DIR / 'db.sqlite3',
-    #}
      'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'django_bd_2025',
-        'USER': 'root',
-        'PASSWORD': 'ARNIAK123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'nani',
+        'PASSWORD': '7HpQxtOQSNhgnIU48CYanoxp26JSiAKP',
+        'HOST': 'dpg-cvf0u35svqrc73crjnsg-a',
+        'PORT': '5432',
     }
+    
     
 }
 
@@ -127,6 +127,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = 'static/'
 
 # Default primary key field type
